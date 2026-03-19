@@ -1,0 +1,8 @@
+{
+  "name": "central-california-ac",
+  "version": "1.0.0",
+  "description": "God Mode HVAC AI Dispatcher",
+  "dependencies": {
+    "openai": "^4.0.0"
+  }
+}
