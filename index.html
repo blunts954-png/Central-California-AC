@@ -4,55 +4,37 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- SEO / META TAGS -->
-  <title>Central California Air | 24/7 AI-Powered HVAC Dispatch</title>
-  <meta name="description" content="24/7 Bilingual AI Dispatcher for Central California Air. Rapid HVAC repair, maintenance, and emergency AC service across Bakersfield, Oildale, Shafter, and Tehachapi.">
-  <meta name="keywords" content="HVAC, AC Repair, Bakersfield, Oildale, Shafter, Tehachapi, AI Dispatcher, Bilingual HVAC">
-
+  <!-- SEO / META TAGS (Populated by JS) -->
+  <title id="meta-title">AI Powered Business Systems</title>
+  <meta name="description" id="meta-desc" content="24/7 AI-Powered Dispatch & Booking.">
+  
   <!-- Open Graph -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Central California Air — Next-Gen HVAC Dispatch">
-  <meta property="og:description" content="Click. Chat. Book. Turn your HVAC emergency into a solution in seconds. Kern County's only 24/7 Bilingual AI-powered dispatcher.">
-  <meta property="og:url" content="https://central-ca-air.vercel.app">
+  <meta property="og:title" id="og-title" content="Business AI System">
   <meta property="og:image" content="og_banner.png">
-
-  <!-- Twitter / X -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Central California Air AI System">
-  <meta name="twitter:description" content="Bilingual AI dispatcher that recovers every missed call and books jobs on autopilot around Kern County.">
-  <meta name="twitter:image" content="og_banner.png">
 
   <!-- Styles / Scripts -->
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+  <script src="config.js"></script>
   
   <style>
     body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
     .hero-bg {
-      background: linear-gradient(rgba(17, 24, 39, 0.85), rgba(17, 24, 39, 0.85)),
-      url('https://images.unsplash.com/photo-1581094288338-2314dddb7bc3?auto=format&fit=crop&q=80');
+      background: linear-gradient(rgba(17, 24, 39, 0.9), rgba(17, 24, 39, 0.9)),
+      url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80');
       background-size: cover;
       background-attachment: fixed;
     }
-    .text-glow {
-      text-shadow: 0 0 15px rgba(59, 130, 246, 0.5);
-    }
     .chat-drawer {
-      transition: transform 0.3s ease-in-out;
+      transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
       transform: translateX(100%);
     }
     .chat-drawer.open {
       transform: translateX(0);
     }
-    /* Hide scrollbar for Chrome, Safari and Opera */
-    .msg-container::-webkit-scrollbar {
-      display: none;
-    }
-    /* Hide scrollbar for IE, Edge and Firefox */
-    .msg-container {
-      -ms-overflow-style: none;  /* IE and Edge */
-      scrollbar-width: none;  /* Firefox */
-    }
+    .msg-container::-webkit-scrollbar { display: none; }
+    #hero-asset { transition: all 0.5s ease-in-out; }
   </style>
 </head>
 <body class="bg-gray-50 text-gray-900 overflow-x-hidden">
@@ -60,30 +42,27 @@
   <!-- NAVIGATION -->
   <nav class="p-4 bg-white/95 backdrop-blur-md shadow-lg flex justify-between items-center sticky top-0 z-50">
     <div class="flex items-center gap-2">
-      <img src="ccaclogo.png" alt="Logo" class="h-12 w-auto">
-      <div class="font-black text-blue-900 text-xl tracking-tighter leading-none hidden sm:block">
-        CENTRAL CA <span class="text-blue-600">AIR</span>
-        <p class="text-[8px] uppercase tracking-widest text-gray-500 mt-1">Kern County's AI Dispatcher</p>
+      <img id="nav-logo" src="" alt="Logo" class="h-10 w-auto hidden">
+      <div class="font-black text-blue-900 text-xl tracking-tighter leading-none">
+        <span id="nav-biz-name">BUSINESS</span> <span class="text-blue-600" id="nav-biz-suffix">NAME</span>
+        <p class="text-[8px] uppercase tracking-widest text-gray-500 mt-1" id="nav-biz-subtitle"></p>
       </div>
     </div>
-    <div class="hidden md:flex gap-8 text-sm font-bold text-gray-700">
-      <a href="#services" class="hover:text-blue-600 transition-colors">Services</a>
-      <a href="#why-us" class="hover:text-blue-600 transition-colors">Why Us</a>
-      <a href="#reviews" class="hover:text-blue-600 transition-colors">Reviews</a>
-      <a href="#contact" class="hover:text-blue-600 transition-colors">Contact</a>
+    <div class="hidden lg:flex gap-8 text-sm font-bold text-gray-700">
+      <a href="#services" class="hover:text-blue-600 transition-colors uppercase tracking-widest">Services</a>
+      <a href="#why-us" class="hover:text-blue-600 transition-colors uppercase tracking-widest">Why Us</a>
+      <a href="#contact" class="hover:text-blue-600 transition-colors uppercase tracking-widest">Connect</a>
     </div>
     <div class="flex items-center gap-4">
-      <a href="tel:16615775018" class="bg-blue-600 hover:bg-blue-700 text-white text-xs font-black px-5 py-2.5 rounded-full shadow-lg transition-all transform hover:scale-105 active:scale-95">
-        661-577-5018
+      <a id="nav-phone-link" href="tel:" class="bg-blue-600 hover:bg-blue-700 text-white text-xs font-black px-5 py-2.5 rounded-full shadow-lg transition-all transform hover:scale-105">
+        <span id="nav-phone">661-000-0000</span>
       </a>
       <div class="relative hidden sm:block">
         <span class="absolute -top-1 -right-1 flex h-2 w-2">
           <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
           <span class="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
         </span>
-        <span class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-widest">
-          AI ONLINE
-        </span>
+        <span class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-widest">AI ONLINE</span>
       </div>
     </div>
   </nav>
@@ -92,221 +71,199 @@
   <header class="hero-bg text-white py-32 px-6 relative overflow-hidden">
     <div class="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-12 relative z-10">
       <div class="lg:w-1/2 text-center lg:text-left">
-        <span class="inline-block bg-blue-600/30 text-blue-400 border border-blue-500/50 px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest mb-6">
-          Bilingual AI Dispatcher Is Operational
-        </span>
-        <h1 class="text-5xl md:text-7xl font-black mb-6 leading-tight tracking-tighter text-glow">
-          24/7 HVAC DISPATCH FOR<br><span class="text-blue-500">KERN COUNTY</span>
-        </h1>
-        <p class="text-xl md:text-2xl mb-8 opacity-90 font-medium">
-          Every call answered. Every job booked. Every time. Serving Bakersfield, Oildale, Shafter & Tehachapi.
-        </p>
+        <span class="inline-block bg-blue-600/30 text-blue-400 border border-blue-500/50 px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest mb-6" id="hero-badge"></span>
+        <h1 class="text-5xl md:text-7xl font-black mb-6 leading-tight tracking-tighter" id="hero-headline"></h1>
+        <p class="text-xl md:text-2xl mb-8 opacity-90 font-medium" id="hero-subline"></p>
         
         <div class="flex flex-col sm:flex-row justify-center lg:justify-start gap-6 mb-10">
-          <button 
-            onclick="toggleChat()" 
-            class="bg-blue-600 hover:bg-blue-500 px-12 py-5 rounded-2xl font-black text-lg shadow-2xl transition-all border-b-4 border-blue-800 transform hover:-translate-y-1 active:translate-y-0"
-          >
-            START AI CHAT / INICIAR CHAT
+          <button onclick="toggleChat()" class="bg-blue-600 hover:bg-blue-500 px-12 py-5 rounded-2xl font-black text-lg shadow-2xl transition-all border-b-4 border-blue-800 transform hover:-translate-y-1 active:translate-y-0 uppercase">
+            START AI CHAT
           </button>
-          <a href="tel:16615775018" 
-            class="bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/20 px-12 py-5 rounded-2xl font-black text-lg shadow-xl text-white transition-all transform hover:-translate-y-1"
-          >
-            CALL 24/7 / LLAMAR
+          <a id="hero-call-link" href="tel:" class="bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/20 px-12 py-5 rounded-2xl font-black text-lg shadow-xl text-white transition-all transform hover:-translate-y-1 uppercase">
+            CALL 24/7
           </a>
         </div>
-
-        <div class="text-white/60 text-sm italic">
-          "Every missed call triggers a text instantly — we never leave customers hanging."
-        </div>
+        <p class="text-white/40 text-[10px] uppercase tracking-widest font-black" id="hero-disclaimer"></p>
       </div>
-      <div class="lg:w-1/2 flex justify-center">
-        <img src="ccactruck.png" alt="Service Truck" class="w-full max-w-xl drop-shadow-2xl transform hover:scale-105 transition-transform duration-500">
+      <div class="lg:w-1/2 flex justify-center" id="hero-asset-container">
+        <img id="hero-asset" src="" alt="Business Asset" class="w-full max-w-xl drop-shadow-2xl transform hover:scale-105 transition-all duration-500 hidden">
       </div>
     </div>
   </header>
 
-  <!-- HOW IT WORKS STRIP -->
-  <section class="py-12 px-6 bg-white border-b border-gray-100">
-    <div class="max-w-4xl mx-auto text-center">
-      <p class="font-bold text-blue-900 uppercase tracking-widest text-xs mb-6 font-black italic">THE DISPATCH WORKFLOW</p>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div>
-          <span class="text-4xl font-black text-blue-100 italic">01</span>
-          <p class="font-bold text-gray-800">Brief the AI</p>
-          <p class="text-xs text-gray-500">English/Spanish — describe your issue in seconds.</p>
-        </div>
-        <div>
-          <span class="text-4xl font-black text-blue-100 italic">02</span>
-          <p class="font-bold text-gray-800">Direct Route</p>
-          <p class="text-xs text-gray-500">Our system routes requests by urgency and city.</p>
-        </div>
-        <div>
-          <span class="text-4xl font-black text-blue-100 italic">03</span>
-          <p class="font-bold text-gray-800">Tech Confirmed</p>
-          <p class="text-xs text-gray-500">Receive a confirmation text in under 5 minutes.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SERVICES SECTION -->
+  <!-- SERVICES SECTION SKELETON -->
   <section id="services" class="py-24 px-6 max-w-7xl mx-auto">
     <div class="text-center mb-16">
-      <h2 class="text-4xl font-black text-blue-900 mb-4 tracking-tighter">RESIDENTIAL & COMMERCIAL SERVICE</h2>
-      <p class="text-gray-600 max-w-2xl mx-auto font-medium leading-relaxed">Fast-response HVAC diagnostics across Bakersfield for $89. We waive the fee if you approve the repair.</p>
+      <h2 class="text-4xl font-black text-blue-900 mb-4 tracking-tighter uppercase italic" id="services-headline"></h2>
+      <p class="text-gray-600 max-w-2xl mx-auto font-medium leading-relaxed" id="services-subline"></p>
     </div>
-
-    <!-- CORE HVAC GRID -->
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-      <div class="bg-white p-10 rounded-3xl shadow-sm border border-gray-100 hover:shadow-xl transition-shadow group border-b-4 border-blue-100">
-        <h3 class="text-xl font-bold text-blue-900 mb-3 uppercase tracking-tighter">AC Repair & Emergency</h3>
-        <p class="text-gray-600 text-sm leading-relaxed">Fast diagnostics when systems fail during Kern County heatwaves. $89 Diagnostic, waived if repaired.</p>
-      </div>
-      <div class="bg-white p-10 rounded-3xl shadow-sm border border-gray-100 hover:shadow-xl transition-shadow group border-b-4 border-blue-100">
-        <h3 class="text-xl font-bold text-blue-900 mb-3 uppercase tracking-tighter">Maintenance & Tune-Up</h3>
-        <p class="text-gray-600 text-sm leading-relaxed">Seasonal check-ups to extend equipment life and minimize power bills. Preventive care for long-term comfort.</p>
-      </div>
-      <div class="bg-white p-10 rounded-3xl shadow-sm border border-gray-100 hover:shadow-xl transition-shadow group border-b-4 border-blue-100">
-        <h3 class="text-xl font-bold text-blue-900 mb-3 uppercase tracking-tighter">New System Upgrade</h3>
-        <p class="text-gray-600 text-sm leading-relaxed">Free estimates on high-efficiency, multi-zone HVAC units. Custom installs for your home or business.</p>
-      </div>
+    <div id="services-grid" class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <!-- Injected by JS -->
     </div>
+  </section>
 
-    <!-- AI FEATURES GRID -->
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-      <div class="bg-blue-900 p-8 rounded-3xl border-l-4 border-blue-500 shadow-xl">
-        <h3 class="text-xl font-bold text-white mb-2 italic">24/7 AI Dispatcher</h3>
-        <p class="text-blue-200 text-sm leading-relaxed">Heas every inquiry, qualifies the job, and alerts technicians while the office is closed.</p>
+  <!-- WHY US / TRUST -->
+  <section id="why-us" class="py-24 px-6 bg-blue-900 text-white relative">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 relative z-10">
+      <div class="md:col-span-2">
+        <h2 class="text-4xl font-black mb-6 tracking-tighter uppercase italic">WHY <span id="trust-biz-name"></span></h2>
+        <ul class="space-y-4 font-bold text-blue-100" id="trust-list">
+          <!-- Injected by JS -->
+        </ul>
       </div>
-      <div class="bg-blue-900 p-8 rounded-3xl border-l-4 border-blue-500 shadow-xl">
-        <h3 class="text-xl font-bold text-white mb-2 italic">Instant Lead Recovery</h3>
-        <p class="text-blue-200 text-sm leading-relaxed">Missed a call? Our system texts back in 3 seconds to keep potential clients away from competitors.</p>
+      <div class="flex flex-col justify-center">
+        <p class="text-6xl font-black mb-2 tracking-tighter">4.8★</p>
+        <p class="text-xs uppercase tracking-widest text-blue-400 font-bold">Average Rating</p>
       </div>
-      <div class="bg-blue-900 p-8 rounded-3xl border-l-4 border-blue-500 shadow-xl">
-        <h3 class="text-xl font-bold text-white mb-2 italic">Bilingual Routing</h3>
-        <p class="text-blue-200 text-sm leading-relaxed">Seamless Spanish/English communication across our Central Valley service area.</p>
+      <div class="flex flex-col justify-center">
+        <p class="text-6xl font-black mb-2 tracking-tighter">24/7</p>
+        <p class="text-xs uppercase tracking-widest text-blue-400 font-bold">Support Availability</p>
       </div>
     </div>
   </section>
 
-  <!-- REVIEWS SNAPSHOT -->
+  <!-- REVIEWS -->
   <section id="reviews" class="py-24 px-6 bg-gray-50 border-y border-gray-200">
-    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-sm text-gray-700 italic">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-sm italic">
       <div class="bg-white p-10 rounded-3xl shadow-sm border border-gray-100">
-        <p class="leading-relaxed font-medium">"Professional service and honest prices. The AI dispatcher booked my tech in minutes."</p>
-        <p class="mt-6 font-black text-blue-900 not-italic uppercase tracking-tighter">— Maria G., Bakersfield</p>
+        <p class="leading-relaxed font-medium">"Smooth process start to finish. The AI dispatcher booked my service in minutes."</p>
+        <p class="mt-6 font-black text-blue-900 not-italic uppercase tracking-tighter font-black">— Satisfied Client</p>
       </div>
       <div class="bg-white p-10 rounded-3xl shadow-sm border border-gray-100">
-        <p class="leading-relaxed font-medium">"AC went out at midnight when it was 100°. Tech arrived at 8:15 AM. Incredible turnaround."</p>
-        <p class="mt-6 font-black text-blue-900 not-italic uppercase tracking-tighter">— Michael R., Shafter</p>
+        <p class="leading-relaxed font-medium">"Fast response and professional team. I can't imagine going back to long hold times."</p>
+        <p class="mt-6 font-black text-blue-900 not-italic uppercase tracking-tighter font-black">— Local Resident</p>
       </div>
       <div class="bg-white p-10 rounded-3xl shadow-sm border border-gray-100">
-        <p class="leading-relaxed font-medium">"Bilingual tech made coordination easy for my father. Truly outstanding service."</p>
-        <p class="mt-6 font-black text-blue-900 not-italic uppercase tracking-tighter">— Elena S., Oildale</p>
+        <p class="leading-relaxed font-medium">"Highly recommend. The bilingual AI support made coordination incredibly simple."</p>
+        <p class="mt-6 font-black text-blue-900 not-italic uppercase tracking-tighter font-black">— Kern Business</p>
       </div>
     </div>
   </section>
 
-  <!-- CONTACT SECTION -->
-  <section id="contact" class="py-24 px-6 bg-white">
+  <!-- FINAL CTA -->
+  <section id="contact" class="py-32 px-6 bg-white border-t border-gray-100">
     <div class="max-w-4xl mx-auto text-center">
-      <h2 class="text-4xl font-black text-blue-900 mb-6 tracking-tighter uppercase leading-none italic">URGENT SERVICE NEEDED?</h2>
-      <p class="text-lg text-gray-700 mb-10 font-medium">
-        Call or chat with our 24/7 AI dispatcher. We route emergency requests immediately to local technicians.
-      </p>
+      <h2 class="text-5xl font-black text-blue-900 mb-6 tracking-tighter uppercase italic">URGENT SERVICE NEEDED?</h2>
+      <p class="text-lg text-gray-700 mb-12 font-medium" id="final-cta-desc"></p>
       <div class="flex flex-col sm:flex-row justify-center gap-6">
-        <a href="tel:16615775018" class="bg-blue-600 hover:bg-blue-700 text-white font-black px-12 py-5 rounded-2xl shadow-xl transition-all">
-          Call 661-577-5018
+        <a id="footer-call-link" href="tel:" class="bg-blue-600 hover:bg-blue-700 text-white font-black px-12 py-5 rounded-2xl shadow-xl transition-all">
+          Call <span id="footer-phone"></span>
         </a>
-        <button onclick="toggleChat()" class="bg-white border-2 border-blue-600 text-blue-700 font-black px-12 py-5 rounded-2xl shadow-lg hover:bg-blue-50 transition-all">
+        <button onclick="toggleChat()" class="bg-white border-2 border-blue-600 text-blue-700 font-black px-12 py-5 rounded-2xl shadow-lg hover:bg-blue-50 transition-all uppercase">
           Launch AI Dispatcher
         </button>
       </div>
-      <p class="mt-12 text-[10px] uppercase tracking-[0.2em] text-gray-400 font-black">
-        Bakersfield · Oildale · Shafter · Tehachapi
-      </p>
+      <p id="footer-regions" class="mt-12 text-[10px] uppercase tracking-[0.2em] text-gray-400 font-black"></p>
     </div>
   </section>
 
-  <!-- FOOTER -->
-  <footer class="bg-gray-900 text-white py-16 px-6">
-    <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
-      <div class="flex items-center gap-2">
-        <img src="ccaclogo.png" alt="Logo" class="h-10 w-auto rounded-full shadow-lg">
-        <span class="font-black text-xl tracking-tighter leading-none italic uppercase">Central CA <span class="text-blue-500">Air</span></span>
-      </div>
-      <div class="text-[10px] uppercase tracking-widest text-gray-500 font-bold">
-        &copy; 2026 Central California Air. All Rights Reserved.
-      </div>
-    </div>
-  </footer>
-
-  <!-- CUSTOM CHAT DRAWER -->
+  <!-- CHAT DRAWER -->
   <div id="chat-drawer" class="chat-drawer fixed top-0 right-0 h-full w-full sm:w-[450px] bg-white shadow-2xl z-[100] flex flex-col">
-    <!-- Header -->
     <div class="bg-blue-600 p-6 text-white flex justify-between items-center shadow-lg">
       <div>
-        <h3 class="font-black text-lg leading-tight italic uppercase tracking-tighter">AI DISPATCHER</h3>
-        <p class="text-[10px] uppercase tracking-widest opacity-80 font-bold">24/7 Kern County Support</p>
+        <h3 class="font-black text-lg leading-tight uppercase italic tracking-tighter" id="chat-title">AI DISPATCHER</h3>
+        <p class="text-[10px] uppercase tracking-widest opacity-80 font-bold" id="chat-subtitle"></p>
       </div>
-      <button onclick="toggleChat()" class="p-2 hover:bg-white/10 rounded-full transition-colors">
+      <button onclick="toggleChat()" class="p-2 hover:bg-white/10 rounded-full">
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
       </button>
     </div>
-
-    <!-- Messages -->
-    <div id="msg-container" class="flex-grow p-6 overflow-y-auto space-y-4 msg-container bg-gray-50">
-      <div class="flex gap-3">
-        <div class="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 font-black text-xs">AI</div>
-        <div class="max-w-[80%] bg-blue-600 text-white p-4 rounded-2xl rounded-tl-none shadow-sm text-sm">
-          Welcome to Central California Air. How can I help you today? | Bienvenido a Central California Air. ¿En qué le puedo ayudar hoy?
-        </div>
-      </div>
-    </div>
-
-    <!-- Input -->
+    <div id="msg-container" class="flex-grow p-6 overflow-y-auto space-y-4 msg-container bg-gray-50"></div>
     <div class="p-4 border-t border-gray-200 bg-white">
       <div class="flex gap-3 bg-gray-100 p-2 rounded-2xl focus-within:ring-2 focus-within:ring-blue-600 transition-all">
-        <input 
-          id="chat-input"
-          type="text" 
-          placeholder="Type message... / Escriba aquí..." 
-          class="flex-grow bg-transparent border-none focus:ring-0 text-sm px-3"
-          onkeydown="if(event.key==='Enter') sendMessage()"
-        >
-        <button onclick="sendMessage()" class="bg-blue-600 text-white w-10 h-10 rounded-xl flex items-center justify-center shadow-lg hover:bg-blue-500 transition-colors">
+        <input id="chat-input" type="text" placeholder="Type here... / Escriba aquí..." class="flex-grow bg-transparent border-none focus:ring-0 text-sm px-3" onkeydown="if(event.key==='Enter') sendMessage()">
+        <button onclick="sendMessage()" class="bg-blue-600 text-white w-10 h-10 rounded-xl flex items-center justify-center shadow-lg hover:bg-blue-500 transition-all">
           <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
         </button>
       </div>
-      <p class="text-[9px] text-center text-gray-400 mt-3 font-bold uppercase tracking-widest">Powered by Kern AI Dispatch</p>
     </div>
   </div>
 
-  <!-- CHAT JAVASCRIPT -->
+  <!-- CORE TEMPLATE ENGINE -->
   <script>
-    let chatHistory = [];
+    document.addEventListener('DOMContentLoaded', () => {
+      // 1. Branding
+      document.title = `${CONFIG.brand.name} | 24/7 AI Dispatch`;
+      document.getElementById('nav-biz-name').innerText = CONFIG.brand.name.split(' ')[0] || '';
+      document.getElementById('nav-biz-suffix').innerText = CONFIG.brand.name.split(' ').slice(1).join(' ') || '';
+      document.getElementById('nav-biz-subtitle').innerText = `${CONFIG.contact.region}'s AI Expert`;
+      
+      if(CONFIG.brand.logoUrl) {
+        const logo = document.getElementById('nav-logo');
+        logo.src = CONFIG.brand.logoUrl;
+        logo.classList.remove('hidden');
+      }
+
+      // 2. Contact
+      const phoneDisplay = CONFIG.contact.phone;
+      const phoneLink = `tel:${CONFIG.contact.phone.replace(/[^0-9]/g, '')}`;
+      document.getElementById('nav-phone').innerText = phoneDisplay;
+      document.getElementById('nav-phone-link').href = phoneLink;
+      document.getElementById('hero-call-link').href = phoneLink;
+      document.getElementById('footer-call-link').href = phoneLink;
+      document.getElementById('footer-phone').innerText = phoneDisplay;
+      document.getElementById('footer-regions').innerText = CONFIG.contact.locations.join(' · ');
+
+      // 3. Hero
+      document.getElementById('hero-badge').innerText = `${CONFIG.ai.language} Dispatch Ready`;
+      document.getElementById('hero-headline').innerHTML = `24/7 ${CONFIG.brand.industry.toUpperCase()} DISPATCH FOR<br><span class="text-blue-500">${CONFIG.contact.region.toUpperCase()}</span>`;
+      document.getElementById('hero-subline').innerText = `Every call answered. Every job booked. Every time. Serving ${CONFIG.contact.locations.join(', ')}.`;
+      document.getElementById('hero-disclaimer').innerText = `Every missed call triggers a text in ${CONFIG.contact.region}—guaranteed.`;
+      
+      if(CONFIG.brand.assetUrl) {
+        const asset = document.getElementById('hero-asset');
+        asset.src = CONFIG.brand.assetUrl;
+        asset.classList.remove('hidden');
+      }
+
+      // 4. Services
+      document.getElementById('services-headline').innerText = `FULL-SERVICE ${CONFIG.brand.industry}`;
+      document.getElementById('services-subline').innerText = `Rapid-response diagnostics across ${CONFIG.contact.region} for ${CONFIG.rules.diagnosticFee}. We waive the fee if you approve the repair.`;
+      
+      const grid = document.getElementById('services-grid');
+      CONFIG.services.forEach(s => {
+        grid.insertAdjacentHTML('beforeend', `
+          <div class="bg-white p-10 rounded-3xl shadow-sm border border-gray-100 hover:shadow-xl transition-all group border-b-4 border-blue-100">
+            <h3 class="text-xl font-bold text-blue-900 mb-3 uppercase tracking-tighter">${s.title}</h3>
+            <p class="text-gray-600 text-sm leading-relaxed">${s.desc}</p>
+          </div>
+        `);
+      });
+
+      // 5. Trust
+      document.getElementById('trust-biz-name').innerText = CONFIG.brand.name;
+      const trustList = document.getElementById('trust-list');
+      [
+        `Licensed & Certified ${CONFIG.brand.industry} Experts`,
+        `24/7 Availability for ${CONFIG.brand.industry} Emergencies`,
+        `Integrated English & Spanish AI Intelligence`
+      ].forEach(t => {
+        trustList.insertAdjacentHTML('beforeend', `<li class="flex items-center gap-3">✓ ${t}</li>`);
+      });
+
+      document.getElementById('final-cta-desc').innerText = `Call or chat with our 24/7 AI dispatcher. We route emergency ${CONFIG.brand.industry} requests immediately.`;
+
+      // 6. Chat Init
+      document.getElementById('chat-subtitle').innerText = `24/7 ${CONFIG.contact.region} DISPATCH`;
+      appendMessage('assistant', CONFIG.ai.greeting);
+    });
+
     const chatDrawer = document.getElementById('chat-drawer');
     const msgContainer = document.getElementById('msg-container');
     const chatInput = document.getElementById('chat-input');
+    let chatHistory = [];
 
     function toggleChat() {
       chatDrawer.classList.toggle('open');
-      if (chatDrawer.classList.contains('open')) {
-        chatInput.focus();
-      }
+      if (chatDrawer.classList.contains('open')) chatInput.focus();
     }
 
     function appendMessage(role, content) {
       const isUser = role === 'user';
       const msgHtml = `
         <div class="flex gap-3 ${isUser ? 'flex-row-reverse' : ''}">
-          <div class="w-8 h-8 rounded-full ${isUser ? 'bg-gray-600' : 'bg-blue-600'} flex items-center justify-center text-white font-black text-xs">
-            ${isUser ? 'U' : 'AI'}
-          </div>
-          <div class="max-w-[80%] ${isUser ? 'bg-white border border-gray-200 text-gray-800 rounded-tr-none' : 'bg-blue-600 text-white rounded-tl-none'} p-4 rounded-2xl shadow-sm text-sm">
-            ${content}
-          </div>
+          <div class="w-8 h-8 rounded-full ${isUser ? 'bg-gray-600' : 'bg-blue-600'} flex items-center justify-center text-white font-black text-xs">${isUser ? 'U' : 'AI'}</div>
+          <div class="max-w-[80%] ${isUser ? 'bg-white border border-gray-200 text-gray-800 rounded-tr-none' : 'bg-blue-600 text-white rounded-tl-none'} p-4 rounded-2xl shadow-sm text-sm">${content}</div>
         </div>
       `;
       msgContainer.insertAdjacentHTML('beforeend', msgHtml);
@@ -316,43 +273,40 @@
     async function sendMessage() {
       const content = chatInput.value.trim();
       if (!content) return;
-
       chatInput.value = '';
       appendMessage('user', content);
       chatHistory.push({ role: 'user', content });
 
-      // Show typing indicator
       const typingId = 'typing-' + Date.now();
-      msgContainer.insertAdjacentHTML('beforeend', `
-        <div id="${typingId}" class="flex gap-3 animate-pulse">
-          <div class="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 font-black text-xs">AI</div>
-          <div class="bg-gray-200 p-4 rounded-2xl rounded-tl-none text-xs text-gray-500 italic">Dispatcher is thinking...</div>
-        </div>
-      `);
+      msgContainer.insertAdjacentHTML('beforeend', `<div id="${typingId}" class="flex gap-3 animate-pulse"><div class="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 font-black text-xs">AI</div><div class="bg-gray-200 p-4 rounded-2xl rounded-tl-none text-xs text-gray-500 italic">Thinking...</div></div>`);
       msgContainer.scrollTop = msgContainer.scrollHeight;
 
       try {
         const response = await fetch('/api/chat', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ messages: chatHistory })
+          body: JSON.stringify({ 
+            messages: chatHistory,
+            config: {
+              name: CONFIG.brand.name,
+              industry: CONFIG.brand.industry,
+              region: CONFIG.contact.region,
+              locations: CONFIG.contact.locations,
+              fee: CONFIG.rules.diagnosticFee
+            }
+          })
         });
-        
         const data = await response.json();
         document.getElementById(typingId).remove();
-
         if (data.content) {
           appendMessage('assistant', data.content);
           chatHistory.push({ role: 'assistant', content: data.content });
-        } else {
-          appendMessage('assistant', 'Sorry, I am having trouble connecting. Please call us at 661-577-5018.');
         }
       } catch (error) {
         document.getElementById(typingId).remove();
-        appendMessage('assistant', 'Sorry, an error occurred. Please call us at 661-577-5018.');
+        appendMessage('assistant', 'Connection error. Please call us directly.');
       }
     }
   </script>
-
 </body>
 </html>
